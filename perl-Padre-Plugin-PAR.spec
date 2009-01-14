@@ -8,8 +8,8 @@ Version:    %{version}
 Release:    %{release}
 License:    GPL or Artistic
 Group:      Development/Perl
-Summary:    Perl Application Development and Refactoring Environment
-Source:     http://www.cpan.org/modules/by-module//%{realname}-%{version}.tar.gz
+Summary:    PAR generation from Padre
+Source:     http://search.cpan.org/CPAN/authors/id/S/SM/SMUELLER/%{realname}-%{version}.tar.gz
 Url:        http://search.cpan.org/dist/%{realname}
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
@@ -20,15 +20,7 @@ Requires:  perl(Padre)
 BuildArch: noarch
 
 %description
-The application maintains its configuration information in a directory
-called .padre
-
-On Strawberry Perl you can associate .pl file extension with
-c:\strawberry\perl\bin\wxperl and then you can start double clicking on the
-application. It should work.
-
- Run This (F5) - run the current buffer with the current perl
- this currently only works with files with .pl  extensions.
+Padre plugin to seamlessly generate a standalone exuctable.
 
 %prep
 %setup -q -n %{realname}-%{version} 
