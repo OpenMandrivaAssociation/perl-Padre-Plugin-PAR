@@ -1,29 +1,27 @@
+%define upstream_name    Padre-Plugin-PAR
+%define upstream_version 0.05
 
-%define realname   Padre-Plugin-PAR
-%define version    0.05
-%define release    %mkrel 2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    PAR generation from Padre
-Source:     http://search.cpan.org/CPAN/authors/id/S/SM/SMUELLER/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/S/SM/SMUELLER/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Padre)
 BuildRequires: perl(Module::Build)
-Requires:  perl(Padre)
-
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+Requires:  perl(Padre)
 
 %description
 Padre plugin to seamlessly generate a standalone exuctable.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor destdir=%{buildroot}
