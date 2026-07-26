@@ -1,15 +1,13 @@
 %define upstream_name    Padre-Plugin-PAR
-%define upstream_version 0.06
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.06
+Release:	7
 
 Summary:	PAR generation from Padre
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://padre.perlide.org
-Source0:	https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Padre-Plugin-PAR-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Padre-Plugin-PAR-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Padre)
@@ -21,7 +19,7 @@ Requires:	perl(Padre)
 Padre plugin to seamlessly generate a standalone exuctable.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor destdir=%{buildroot}
@@ -51,8 +49,7 @@ perl Build.PL installdirs=vendor destdir=%{buildroot}
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.50.0-1mdv2010.0
 + Revision: 401623
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %0.06 fixed license field
 
 * Mon May 04 2009 Jérôme Quelin <jquelin@mandriva.org> 0.05-2mdv2010.0
 + Revision: 371826
